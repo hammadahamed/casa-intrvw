@@ -1,0 +1,32 @@
+.results-component-w {
+    .container {
+        max-height: 400px;
+        width: 300px;
+
+        background-color: rgb(19, 19, 19);
+        border-radius: 10px;
+        color: white;
+        overflow: auto;
+
+        text-align: left;
+        padding: 14px;
+
+
+        .res-w {
+            &.selected {
+                color: violet;
+            }
+        }
+
+        p {
+            border-bottom: 1px solid rgb(112, 112, 112);
+
+            &:hover {
+                cursor: pointer;
+
+                opacity: .7;
+                ;
+            }
+        }
+    }
+}
