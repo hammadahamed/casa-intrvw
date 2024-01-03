@@ -1,7 +1,20 @@
 .results-component-w {
+    position: relative;
+
+    .app-btn {
+        background-color: black;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
     .container {
-        max-height: 400px;
-        width: 300px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        max-height: 300px;
+        width: 280px;
 
         background-color: rgb(19, 19, 19);
         border-radius: 10px;

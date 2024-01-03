@@ -6,10 +6,6 @@ import SearchResults from "./model/searchResults";
 function App() {
   const [searchResults, setSearchResults] = useState(null as string[] | null);
 
-  const data = Array.from({ length: 1000 }, (_, index) => {
-    return "hello " + index;
-  });
-
   const search = async (query?: string) => {
     let url = "https://jsonplaceholder.typicode.com/todos";
     if (query) {
@@ -17,9 +13,7 @@ function App() {
     }
     const response = await fetch(url);
     const parsedResult = await response.json();
-    setSearchResults(
-      parsedResult.map((pr: SearchResults) => ({ [pr.title]: 0 }))
-    );
+    setSearchResults(parsedResult.map((pr: SearchResults) => pr.title));
   };
 
   useEffect(() => {
@@ -28,8 +22,10 @@ function App() {
 
   return (
     <>
-      <ResultsComponent results={data} searchCallBack={search} />
-      <ResultsComponent results={data} searchCallBack={search} />
+      <div className="wrapper">
+        <ResultsComponent results={searchResults} searchCallBack={search} />
+        <ResultsComponent results={searchResults} searchCallBack={search} />
+      </div>
     </>
   );
 }
